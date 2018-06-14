@@ -1,3 +1,11 @@
+// you have a group of people with birth and death years,
+// how would you find the year with the most people alive
+
+// every person has birth year (int) and a death year (int)
+// we can pick each year and see if a person is still alive birth > Y < Death
+//start with lowest year, see how many other years include that years
+
+
 function years(arr) {
   var count = 0;
   var temp = 0;
