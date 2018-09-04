@@ -5,54 +5,46 @@
 // we can pick each year and see if a person is still alive birth > Y < Death
 //start with lowest year, see how many other years include that years
 
-
 function years(arr) {
   var count = 0;
   var temp = 0;
-  var year = 0;
-  var start_year = 0;
   var end_year = 0;
-
 
   arr.sort(function(a, b) {
     if (a[1] > end_year) {
-      end_year = a[1];
+      end_year = a[1]
     }
-    if (b[1] > end_year) {
-      end_year = b[1];
-    }
-    return a[0] - b[0] //sorted years
+    return a[0] - b[0]
+
   })
-
-  start_year = arr[0][0];
-
-  console.log("start_year:", start_year, "end_year:",
-    end_year);
+  var start_year = arr[0][0];
+  console.log(arr); //sorts by birth year
+  console.log("start year:", start_year, "highest year:", end_year);
+  // console.log(arr.length);
   for (var i = start_year; i < end_year; i++) {
     for (var j = 0; j < arr.length; j++) {
       if (i > arr[j][0] && i < arr[j][1]) {
         count += 1;
-
-        if (temp < count) {
+        console.log(count, "year:", i);
+        if (count > temp) {
+          console.log("top year:", i, "with count:", count);
           temp = count;
-          year = i;
+
         }
       }
+
     }
+    console.log("exiting: with count:", count);
     count = 0;
   }
-  console.log("year:", year, "count:", temp);
-  return year;
-
 }
 
+
 years([
-  [1999, 2002],
-  [1998, 2001],
-  [2002, 2025],
-  [1890, 1999],
-  [1880, 1976],
-  [1890, 2010],
-  [1990, 2018],
-  [1987, 2020]
+  [1901, 2001],
+  [2008, 2011],
+  [2000, 2010],
+  [2009, 2020]
+
+
 ]);
