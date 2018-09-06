@@ -15,10 +15,11 @@ var merge = function(intervals) {
     return []
   }
   if (intervals.length === 1) {
-    return [intervals[0][0], intervals[0][1]]
+    return intervals
   }
   //sort starting
   intervals.sort(function(a, b) {
+    console.log(a, b);
     return a[0] - b[0]
   })
 
@@ -52,9 +53,6 @@ var merge = function(intervals) {
 };
 //[ [ 1, 3 ], [ 15, 18 ] ]
 //[[1,6],[8,10],[15,18]]
-merge([
-  [1, 3],
-  [2, 6],
-  [8, 10],
+console.log(merge([
   [15, 18]
-])
+]));

@@ -9,4 +9,4 @@ function fib(n) {
   }
 }
 
-console.log(fib(9));
+console.log(fib(30));

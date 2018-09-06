@@ -12,7 +12,11 @@ var largestNumber = function(nums) {
     console.log("ba:", ba, "ab:", ab);
     return ba - ab; //z to a
   });
+  /// sorted function above
   console.log("sorted:", sorted);
+
+  // var testSort = nums.sort().reverse().join('') // much shorter than first one
+  // console.log(testSort);
 
   var joined = sorted.join('');
   if (parseInt(joined) === 0) {
